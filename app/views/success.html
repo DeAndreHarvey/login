@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+       <title>Registration complete Index</title>
+    </head>
+    <body>
+        <h2> Success! Welcome, {{name}}</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+    </body>
+</html>

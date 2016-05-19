@@ -1,8 +1,32 @@
+<!doctype html>
 <html>
-  <head>
-    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
-  </head>
-  <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+    <head>
+       <title>Registration Index</title>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <h3>Registration</h3>
+      <form action='/create' method='post'>
+          First Name: <input type='text' name='fname'><br>
+          Last Name: <input type='text' name='lname'><br>
+          Email :<input type='text' name='email'><br>
+          Password:<input type='password' name='pwd'><br>
+          Confirm Password :<input type='password' name='cpwd'><br>  
+          <input type='submit' value='Submit'>
+      </form><br>
+        <h3>LOGIN</h3>
+        
+        <form action="/login" method="post">
+        <input type="text" name="email" placeholder="Username (Email)"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Log In">
+        </form>
+        
+    </body>
 </html>
